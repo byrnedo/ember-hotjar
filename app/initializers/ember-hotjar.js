@@ -6,12 +6,12 @@ export function initialize() {
     application =  arguments[1];
     container.options('hotjar:main');
   }
-  // application.inject('controller', '_kmq', 'kmq:main');
-  // application.inject('route',      '_kmq', 'kmq:main');
+
+  application.inject('controller', '_hj', 'hotjar:main');
+  application.inject('route',      '_hj', 'hotjar:main');
 };
 
 export default {
   name: 'ember-hotjar',
-
   initialize: initialize
 };
