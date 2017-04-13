@@ -22,7 +22,8 @@ module.exports = function(environment) {
       // when it is created
     },
     hotjar: {
-      id: 1
+      id: 1,
+      enabled: true
     }
   };
 

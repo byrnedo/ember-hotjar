@@ -1,4 +1,5 @@
 import config from '../config/environment';
+import Ember from 'ember';
 
 
 var  hj = window.hj = window.hj || function(){(window.hj.q=window.hj.q||[]).push(arguments)};
@@ -24,8 +25,14 @@ function load(id, forceSSL, snippetVer) {
   }, 1);
 }
 
+
 if (config.hotjar && config.hotjar.id) {
-  load(config.hotjar.id, !!config.hotjar.forceSSL, config.hotjar.snippetVersion);
+
+  if ('enabled' in config.hotjar && ! config.hotjar.enabled) {
+    Ember.Logger.debug('Not running hotjar script, config.hotjar.enabled set to false');
+  } else {
+    load(config.hotjar.id, !!config.hotjar.forceSSL, config.hotjar.snippetVersion);
+  }
 } else {
   throw new TypeError('Missing config/environment entry `config.hotjar.id`');
 }
