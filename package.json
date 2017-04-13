@@ -1,6 +1,6 @@
 {
   "name": "ember-hotjar",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Hotjar tracking code injection.",
   "keywords": [
     "ember-addon", "hotjar"
