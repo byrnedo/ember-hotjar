@@ -1,26 +1,34 @@
 # ember-hotjar
 
-This README outlines the details of collaborating on this Ember addon.
+Quick and easy hotjar integration
 
-## Installation
+## Usage
+* `npm install --save-dev ember-hotjar`
+* add `config.hotjar.id` to config/environment.js
+* optionally add `hotjar.forceSSL=true` to config/environment.js to force loading scripts via SSL.
+* optionally add `hotjar.snippetVersion=5` to config/environment.js to change the version. 5 is the default.
+* in routes and controller you will have _hj.push available
+
+
+## Dev Installation
 
 * `git clone <repository-url>` this repository
 * `cd ember-hotjar`
 * `npm install`
 * `bower install`
 
-## Running
+## Dev Running
 
 * `ember serve`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-## Running Tests
+## Dev Running Tests
 
 * `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
 * `ember test`
 * `ember test --server`
 
-## Building
+## Dev Building
 
 * `ember build`
 

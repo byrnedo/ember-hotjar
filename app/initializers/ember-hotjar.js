@@ -9,8 +9,7 @@ export function initialize() {
 
   application.inject('controller', '_hj', 'hotjar:main');
   application.inject('route',      '_hj', 'hotjar:main');
-};
-
+}
 export default {
   name: 'ember-hotjar',
   initialize: initialize

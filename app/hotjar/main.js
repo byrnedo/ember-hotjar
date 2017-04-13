@@ -24,10 +24,10 @@ function load(id, forceSSL, snippetVer) {
   }, 1);
 }
 
-if (config.hotjarId) {
-  load(config.hotjarId, !!config.hotjarForceSSL, config.hotjarSnippetVersion);
+if (config.hotjar && config.hotjar.id) {
+  load(config.hotjar.id, !!config.hotjar.forceSSL, config.hotjar.snippetVersion);
 } else {
-  throw new TypeError('Missing config/environment entry `config.hotjarId`');
+  throw new TypeError('Missing config/environment entry `config.hotjar.id`');
 }
 
 
