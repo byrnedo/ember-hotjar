@@ -31,7 +31,9 @@ if (config.hotjar && config.hotjar.id) {
   if ('enabled' in config.hotjar && ! config.hotjar.enabled) {
     Ember.Logger.debug('Not running hotjar script, config.hotjar.enabled set to false');
   } else {
-    load(config.hotjar.id, !!config.hotjar.forceSSL, config.hotjar.snippetVersion);
+    if (typeof FastBoot === 'undefined') {
+      load(config.hotjar.id, !!config.hotjar.forceSSL, config.hotjar.snippetVersion);
+    }
   }
 } else {
   throw new TypeError('Missing config/environment entry `config.hotjar.id`');
