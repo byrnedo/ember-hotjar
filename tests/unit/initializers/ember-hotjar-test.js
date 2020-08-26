@@ -1,17 +1,18 @@
-import Ember from 'ember';
+import Resolver from 'ember-resolver';
+import { run } from '@ember/runloop';
+import Application from '@ember/application';
 import { initialize } from 'dummy/initializers/ember-hotjar';
 import { module, test } from 'qunit';
-import destroyApp from '../../helpers/destroy-app';
 
 module('Unit | Initializer | ember hotjar', {
   beforeEach() {
-    Ember.run(() => {
-      this.application = Ember.Application.create();
+    run(() => {
+      this.application = Application.create({ Resolver });
       this.application.deferReadiness();
     });
   },
   afterEach() {
-    destroyApp(this.application);
+    this.application.destroy();
   }
 });
 
