@@ -1,6 +1,7 @@
 # ember-hotjar
 
-Quick and easy hotjar integration
+Quick and easy hotjar integration.
+With absolutely no warranty.
 
 ## Usage
 * `npm install --save-dev ember-hotjar`
